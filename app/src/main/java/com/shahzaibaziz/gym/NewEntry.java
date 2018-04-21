@@ -73,7 +73,7 @@ public class NewEntry extends AppCompatActivity implements View.OnClickListener 
                 x_days= year;
                 x_month=month;
                 x_days=day;
-                tvDate.setText(year+"/"+month+"/"+day);
+                tvDate.setText(day+"/"+month+"/"+year);
             }
 
             };

@@ -30,19 +30,19 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         {
             case(R.id.tv_home_new_entry):
             {
-                intent= new Intent(this,NewEntry.class);
+                intent= new Intent(getApplicationContext(),NewEntry.class);
                 break;
             }
 
             case(R.id.tv_home_search_entry):
             {
-                intent= new Intent(this,SearchActivity.class);
+                intent= new Intent(getApplicationContext(),SearchActivity.class);
                 break;
             }
 
             case(R.id.tv_home_delete_entry):
             {
-                intent= new Intent(this,DeleteActivity.class);
+                intent= new Intent(getApplicationContext(),DeleteActivity.class);
                 break;
             }
         }

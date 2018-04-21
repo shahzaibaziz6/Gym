@@ -51,6 +51,11 @@ public class NewEntry extends AppCompatActivity implements View.OnClickListener 
         btnSave.setOnClickListener(this);
         datepicker= findViewById(R.id.ll_new_entry_date_picker);
         datepicker.setOnClickListener(this);
+        Calendar calendar= Calendar.getInstance();
+        x_years=calendar.get(Calendar.YEAR);
+        x_month= calendar.get(Calendar.MONTH);
+        x_days= calendar.get(Calendar.DAY_OF_MONTH);
+
 
 
     }

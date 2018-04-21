@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8sp"
+    tools:context=".NewEntry">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/ll_new_entry_name_pic" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4sp">
+            <TextView
+                android:id="@+id/tv_new_entry_first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/etv_new_entry_first_name"
+                android:text="@string/first_name"
+
+                android:paddingBottom="4sp"/>
+            <EditText
+                android:id="@+id/etv_new_entry_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="@color/tvbackground"
+                android:hint="@string/rizwan"
+                android:layout_below="@id/tv_new_entry_first_name"
+                android:textSize="26sp"
+                android:paddingBottom="4sp"
+                android:inputType="textPersonName"
+                android:paddingTop="4sp"
+                android:singleLine="true"/>
+
+
+            <TextView
+                android:id="@+id/tv_new_entry_last_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etv_new_entry_first_name"
+                android:text="Second Name"
+                android:paddingTop="4sp"
+                android:paddingBottom="4sp"/>
+
+            <EditText
+                android:id="@+id/etv_new_entry_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_below="@id/tv_new_entry_last_name"
+                android:background="@color/tvbackground"
+                android:hint="khan"
+                android:paddingBottom="4sp"
+                android:paddingTop="4sp"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:textSize="26sp" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/iv_new_entry_user_pic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_add_to_photos_black_24dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_number"
+        android:paddingTop="4sp"
+        android:paddingBottom="4sp"
+        android:id="@+id/tv_new_entry_phone_number"
+        android:layout_below="@id/ll_new_entry_name_pic"/>
+    <EditText
+        android:id="@+id/etv_new_entry_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_below="@id/tv_new_entry_phone_number"
+        android:background="@color/tvbackground"
+        android:paddingBottom="3sp"
+        android:paddingTop="3sp"
+        android:inputType="phone"
+        android:singleLine="true"
+        android:textSize="26sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:paddingTop="4sp"
+        android:paddingBottom="4sp"
+        android:id="@+id/tv_new_entry_address"
+        android:layout_below="@id/etv_new_entry_phone_number"/>
+    <EditText
+        android:id="@+id/etv_new_entry_address"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_below="@id/tv_new_entry_address"
+        android:background="@color/tvbackground"
+        android:paddingBottom="3sp"
+        android:paddingTop="3sp"
+        android:singleLine="true"
+        android:textSize="26sp"
+        android:inputType="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/starting_date"
+        android:paddingTop="4sp"
+        android:paddingBottom="4sp"
+        android:id="@+id/tv_new_entry_start_date"
+        android:layout_below="@id/etv_new_entry_address"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_new_entry_date_picker"
+        android:orientation="horizontal"
+        android:paddingTop="4sp"
+        android:paddingBottom="4sp"
+        android:background="@color/tvbackground"
+        android:layout_below="@id/tv_new_entry_start_date">
+        <TextView
+            android:id="@+id/tv_new_entry_date"
+            android:layout_width="0dp"
+            android:paddingTop="4sp"
+            android:paddingBottom="4sp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_new_entry_date_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_date_range_black_24dp"
+            android:contentDescription="TODO" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_new_entry_save"
+        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        android:paddingTop="4sp"
+        android:paddingBottom="4sp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/background"
+        android:text="Save"
+        android:layout_below="@id/ll_new_entry_date_picker"/>
+
+    </RelativeLayout>

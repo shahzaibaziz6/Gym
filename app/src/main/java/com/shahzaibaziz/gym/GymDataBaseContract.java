@@ -8,6 +8,7 @@ public final class GymDataBaseContract {
 
     public static class GymModel implements BaseColumns{
         public static final String TABLE_NAME="Customer";
+        public static final String ID="ID";
         public static final String FIRST_NAME="FirstName";
         public static final String LAST_NAME="LastName";
         public static final String PHONE_NUMBER="PhoneNumber";

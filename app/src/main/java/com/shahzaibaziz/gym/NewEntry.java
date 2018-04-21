@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
+import android.provider.ContactsContract;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -24,10 +25,11 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 public class NewEntry extends AppCompatActivity implements View.OnClickListener {
 
-    public EditText etvFirstName,etvLastName,etvPhoneNumber;
+    public EditText etvFirstName,etvLastName,etvPhoneNumber,etvAddress;
     public ImageView ivUserPic;
     public Bitmap image;
     public LinearLayout datepicker;
@@ -45,6 +47,7 @@ public class NewEntry extends AppCompatActivity implements View.OnClickListener 
         etvPhoneNumber= findViewById(R.id.etv_new_entry_phone_number);
         ivUserPic= findViewById(R.id.iv_new_entry_user_pic);
         ivUserPic.setOnClickListener(this);
+        etvAddress= findViewById(R.id.etv_new_entry_address);
         btnSave= findViewById(R.id.btn_new_entry_save);
         tvDate=findViewById(R.id.tv_new_entry_date);
         tvDate.setOnClickListener(this);
@@ -87,6 +90,13 @@ public class NewEntry extends AppCompatActivity implements View.OnClickListener 
         {
            showDialog(DAILOG_ID);
         }
+        else if(v.getId()==R.id.btn_new_entry_save)
+        {
+            if(validateFields())
+            {
+                Toast.makeText(this,"All are good",Toast.LENGTH_SHORT).show();
+            }
+        }
 
 
     }
@@ -122,9 +132,16 @@ public class NewEntry extends AppCompatActivity implements View.OnClickListener 
     }
     private  void showCamera()
     {
-        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
-
+        try {
+            Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,HomeActivity.class);
+            startActivity(intent);
+        }
         // start the image capture Intent
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -157,6 +174,48 @@ public class NewEntry extends AppCompatActivity implements View.OnClickListener 
             // other 'case' lines to check for other
             // permissions this app might request.
         }
+    }
+
+    public boolean validateFields() {
+
+        String regexStr = "^[0-9]$";
+        String firstName,lastName,phoneNumber,date,Address;
+        firstName = etvFirstName.getText().toString();
+        lastName = etvLastName.getText().toString();
+        phoneNumber = etvPhoneNumber.getText().toString();
+        date = tvDate.getText().toString();
+        Address=etvAddress.getText().toString();
+
+        if (firstName.equals("")) {
+            etvFirstName.requestFocus();
+            etvFirstName.setError(" First name is not Empty");
+            return false;
+        }
+
+        if (lastName.equals("")) {
+            etvLastName.requestFocus();
+            etvLastName.setError("Last name is not Empty");
+            return false;
+        }
+
+        if (!(phoneNumber.length()>10 && phoneNumber.length()<13)) {
+            etvPhoneNumber.requestFocus();
+            etvPhoneNumber.setError("Valid number");
+            return false;
+        }
+        if (Address.equals("")) {
+            etvAddress.requestFocus();
+            etvAddress.setError("Not Empty");
+            return false;
+
+        }
+        if (date.equals("")) {
+            tvDate.requestFocus();
+           tvDate.setError("Not Empty");
+            return false;
+        }
+
+        return true;
     }
 
 }

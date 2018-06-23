@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
-
-    <android.support.v7.widget.AppCompatImageView
+    tools:context=".SplashActivity"
+    >
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_launcher_foreground"/>
+        android:src="@mipmap/ic_launcher_123"
+        android:scaleType="centerCrop"/>
+
 
     <ProgressBar
         android:id="@+id/pb_splash_progress_bar"

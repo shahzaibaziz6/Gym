@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment_and_history">
+
+    <LinearLayout
+        android:id="@+id/ll_Payment_and_history_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_Payment_and_history_name_pic"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4sp"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/etv_Payment_and_history_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:background="@color/tvbackground"
+                    android:hint="@string/rizwan"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="4sp"
+                    android:paddingTop="4sp"
+                    android:singleLine="true"
+                    android:editable="false"
+                    android:textSize="26sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_Payment_and_history_last_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etv_Payment_and_history_first_name"
+                    android:paddingBottom="4sp"
+                    android:paddingTop="4sp"
+                    android:text="Second Name" />
+
+                <EditText
+                    android:id="@+id/etv_Payment_and_history_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="24dp"
+                    android:background="@color/tvbackground"
+                    android:hint="khan"
+                    android:editable="false"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="4sp"
+                    android:paddingTop="4sp"
+                    android:singleLine="true"
+                    android:textSize="26sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_Payment_and_history_user_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_add_to_photos_black_24dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_Payment_and_history_phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_Payment_and_history_name_pic"
+            android:paddingBottom="4sp"
+            android:paddingTop="4sp"
+            android:text="@string/phone_number" />
+
+        <EditText
+            android:id="@+id/etv_Payment_and_history_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_below="@id/tv_Payment_and_history_phone_number"
+            android:background="@color/tvbackground"
+            android:inputType="phone"
+            android:paddingBottom="3sp"
+
+            android:editable="false"
+            android:paddingTop="3sp"
+            android:singleLine="true"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tv_Payment_and_history_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etv_Payment_and_history_phone_number"
+            android:paddingBottom="4sp"
+            android:paddingTop="4sp"
+            android:text="@string/address" />
+
+        <EditText
+            android:id="@+id/etv_Payment_and_history_address"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_below="@id/tv_Payment_and_history_address"
+            android:background="@color/tvbackground"
+            android:inputType=""
+
+            android:editable="false"
+            android:paddingBottom="3sp"
+            android:paddingTop="3sp"
+            android:singleLine="true"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tv_Payment_and_history_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etv_Payment_and_history_address"
+            android:paddingBottom="4sp"
+            android:paddingTop="4sp"
+            android:text="@string/starting_date" />
+
+        <LinearLayout
+            android:id="@+id/ll_Payment_and_history_date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_Payment_and_history_start_date"
+            android:background="@color/tvbackground"
+            android:orientation="horizontal"
+            android:paddingBottom="4sp"
+            android:paddingTop="4sp">
+
+            <TextView
+                android:id="@+id/tv_Payment_and_history_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingBottom="4sp"
+                android:paddingTop="4sp" />
+
+            <ImageView
+                android:id="@+id/iv_Payment_and_history_date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_date_range_black_24dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_Payment_and_history_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment"/>
+
+            <Button
+                android:id="@+id/btn_Payment_and_history_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

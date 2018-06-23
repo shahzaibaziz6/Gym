@@ -10,7 +10,7 @@ public final class GymDataBaseContract {
         public static final String TABLE_NAME="Customer";
         public static final String ID="ID";
         public static final String FIRST_NAME="FirstName";
-        public static final String LAST_NAME="LastName";
+        public static final String LAST_NAME="secondName";
         public static final String PHONE_NUMBER="PhoneNumber";
         public static final String ADDRESS="Address";
         public static final String STARTING_DATE="Date";

@@ -135,7 +135,7 @@
             android:paddingBottom="4sp"
             android:layout_weight="2"
             android:layout_height="wrap_content" />
-        <ImageView
+         <ImageView
             android:id="@+id/iv_new_entry_date_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
